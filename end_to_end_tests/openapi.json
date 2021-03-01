@@ -666,6 +666,23 @@
           }
         }
       }
+    },
+    "/test/model_title_diff_name": {
+      "get": {
+        "operationId": "todo_list_admin_todo_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_AdminTodoOut_"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -716,7 +733,7 @@
           "a_not_required_date": {
             "title": "A Nullable Date",
             "type": "string",
-            "format": "date",
+            "format": "date"
           },
           "1_leading_digit": {
             "title": "Leading Digit",
@@ -934,6 +951,20 @@
               "type": "boolean"
             }
           ]
+        }
+      },
+            "Page_AdminTodoOut_": {
+        "title": "Page[AdminTodoOut]",
+        "required": [
+          "size"
+        ],
+        "type": "object",
+        "properties": {
+          "size": {
+            "title": "Size",
+            "exclusiveMinimum": 0,
+            "type": "integer"
+          }
         }
       }
     }
